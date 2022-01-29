@@ -30,4 +30,10 @@ def func_deriv(List_val):
 
 def func_deriv_sec(List_val):
     h_pas=1
-    return -1
+    List_output = func_deriv(List_val)
+    
+    if not(List_output):
+        print("Error - Liste trop courte")
+        return False
+
+    return func_deriv(List_output)
