@@ -14,3 +14,8 @@ def func_mirroir(mot,val):
         return False
 
     return mot[:(val+1)]+''.join(reversed(mot[:(val+1)]))
+
+
+def func_deriv(val):
+    h_pas = 1
+    return -1
