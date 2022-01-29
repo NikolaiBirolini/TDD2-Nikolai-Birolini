@@ -23,7 +23,18 @@ class test_func(unittest.TestCase):
         self.assertEqual(func.func_deriv([2,4,8]),[2,4]) # x²
 
 
-    #def test_func_deriv_sec(self):
+    def test_func_deriv_sec(self):
+        self.assertEqual(func.func_deriv_sec([]),False) # empty list
+        self.assertEqual(func.func_deriv_sec([1]),False) # derivation of a point
+
+        self.assertEqual(func.func_deriv_sec([2,2,2]),[0]) # const derivation
+        self.assertEqual(func.func_deriv_sec([2,2,2,3,4,5]),[0,1,0,0]) # func par morceau
+
+        self.assertEqual(func.func_deriv_sec([-4,-5,-6]),[0]) # neg derivation
+        self.assertEqual(func.func_deriv_sec([1,2,3,4,5]),[0,0,0]) # pos derivation
+        self.assertEqual(func.func_deriv_sec([0.5,1,1.5]),[0]) # h le pas, float
+        self.assertEqual(func.func_deriv_sec([2,4,8]),[2]) # x²
+
 
 
     #def test_func_approx(self):

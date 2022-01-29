@@ -27,3 +27,7 @@ def func_deriv(List_val):
     for val in range(len(List_val)-1):
         List_output.append((List_val[val+1]-List_val[val])/h_pas)
     return List_output
+
+def func_deriv_sec(List_val):
+    h_pas=1
+    return -1
