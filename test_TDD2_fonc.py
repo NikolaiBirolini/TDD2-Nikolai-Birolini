@@ -48,7 +48,10 @@ class test_func(unittest.TestCase):
         self.assertEqual(func.func_approx("1+x",1,2),1.000) 
         self.assertEqual(func.func_approx("1+x",1,99),False) # Too high approx
         self.assertEqual(func.func_approx("1",1,2),0.000) # constante
-        self.assertEqual(func.func_approx("x**2",1,2),2.000) 
+        self.assertEqual(func.func_approx("x**2",1,2),2.000)
+        self.assertEqual(func.func_approx("cos(x)",0.5,3),-0.479)
+
+        
 
 
 if __name__ == "__main__":
