@@ -1,4 +1,5 @@
 import string
+from sympy import *
 
 def func_mirroir(mot,val):
     if val <0:
@@ -39,5 +40,21 @@ def func_deriv_sec(List_val):
     return func_deriv(List_output)
 
 def func_approx(formula,point,approx):
+    if len(formula) < 1:
+        print("Error - Taille trop petite")
+        return False
+    
+    if approx > 5:
+        print("Error - approx trop elevee")
+        return False
+    
+    x = Symbol('x')
+    deriv = diff(formula,x)
+    fct = lambdify(x,deriv)
+    print(fct(point))
+
+    return round(fct(point),approx)
+
+
 
     return -1
