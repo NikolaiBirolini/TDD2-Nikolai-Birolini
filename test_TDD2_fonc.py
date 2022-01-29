@@ -45,7 +45,7 @@ class test_func(unittest.TestCase):
         self.assertEqual("division by zero", str(exc.exception))
         self.assertEqual(func.func_approx("1/x",1,0),-1.0) # 0 approx
 
-        self.assertEqual(func.func_approx("cos(x)",0.5,-3),False)
+        self.assertEqual(func.func_approx("cos(x)",0.5,-3),False) # approx < 0
 
         self.assertEqual(func.func_approx("1+x",1,2),1.000) 
         self.assertEqual(func.func_approx("1+x",1,99),False) # Too high approx
