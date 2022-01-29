@@ -1,6 +1,7 @@
 import string
 import unittest
 import func
+import math
 
 class test_func(unittest.TestCase):
     def test_func_mirroir(self):
@@ -37,7 +38,15 @@ class test_func(unittest.TestCase):
 
 
 
-    #def test_func_approx(self):
+    def test_func_approx(self):
+        self.assertEqual(func.func_approx("",1,2),False) # empty formula
+        self.assertEqual(func.func_approx("1/x",0,2),False) # 0
+        self.assertEqual(func.func_approx("1/x",1,0),"1") # 0 approx
+
+        self.assertEqual(func.func_approx("1+x",1,2),"1.00") 
+        self.assertEqual(func.func_approx("1+x",1,99),False) # Too high approx
+        self.assertEqual(func.func_approx("1",1,2),"0.00") # constante
+        self.assertEqual(func.func_approx("x**2",1,2),"2.00") 
 
 
 if __name__ == "__main__":

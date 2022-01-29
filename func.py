@@ -37,3 +37,7 @@ def func_deriv_sec(List_val):
         return False
 
     return func_deriv(List_output)
+
+def func_approx(formula,point,approx):
+
+    return -1
