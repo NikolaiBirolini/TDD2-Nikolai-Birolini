@@ -44,17 +44,12 @@ def func_approx(formula,point,approx):
         print("Error - Taille trop petite")
         return False
     
-    if approx > 5:
-        print("Error - approx trop elevee")
+    if approx > 5 or approx < 0:
+        print("Error - approx invalide 0 - 4")
         return False
     
     x = Symbol('x')
     deriv = diff(formula,x)
     fct = lambdify(x,deriv)
-    print(fct(point))
 
     return round(fct(point),approx)
-
-
-
-    return -1
